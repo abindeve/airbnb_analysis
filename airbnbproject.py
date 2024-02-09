@@ -131,7 +131,7 @@ def air_address():
     #Dropping column address   
     df_address.drop(columns=['address'], inplace=True)
 
-        #Converting string labels ('Yes' and 'No') instead of boolean values (True and False)
+    #Converting string labels ('Yes' and 'No') instead of boolean values (True and False)
     df_address['is_location_exact'] = df_address['is_location_exact'].map({False: 'No', True: 'Yes'})
     
     return df_address
@@ -196,7 +196,7 @@ def data_to_sql():
             database="airbnb_analysis"
         )
 
-        # Create a cursor object
+    # Create a cursor object
     cursor = mydb.cursor()
     df_data = creating_dataframe()       
     column_names = df_data.columns.tolist()
@@ -283,8 +283,6 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.sidebar.markdown("<h1 style='color: #52aec4;  font-size: 25px;'>Airbnb Analysis</h1>", unsafe_allow_html=True)
-# Your Streamlit app content goes here
-
 st.sidebar.header("Menu")
 
 welcome_css = """
